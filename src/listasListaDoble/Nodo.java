@@ -1,14 +1,24 @@
 package listasListaDoble;
 
-public class Nodo {
-    int dato;
-    Nodo siguiente;
-    Nodo anterior;
+public class Nodo<T> {
+    private T dato;
 
-    public Nodo(int dato) {
+    private Nodo<T> siguiente;
+
+    public Nodo(T dato) {
         this.dato = dato;
-        this.siguiente = null;
-        this.anterior = null;
     }
-    
+
+    public T getDato() {
+        return dato;
+    }
+
+    public void setDato(T dato) {
+        this.dato = dato;
+    }
+
+    public Nodo<T> getSiguiente() {
+        return siguiente;
+
+    }
 }
