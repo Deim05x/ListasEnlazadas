@@ -60,6 +60,17 @@ public class ListaDoble<T> {
         actual.siguiente.anterior = nuevoNodo;
         actual.siguiente = nuevoNodo;
         size++;
+    } 
+
+    public void obtenerValorNodo (int posicion) { 
+    if (posicion < 0 || posicion >= size) {
+        throw new IndexOutOfBoundsException("Posición inválida");
+    }
+
+    } 
+
+    public void obtenerNodo(int posicion) { 
+
     }
 
 
