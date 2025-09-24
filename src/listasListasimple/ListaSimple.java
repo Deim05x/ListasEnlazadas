@@ -1,15 +1,29 @@
 package listasListasimple;
 
-import java.util.List;
+public class ListaSimple<T> {
 
-public class ListaSimple {
-
-    Nodo nodoPrimero;
+    Node<T> nodoPrimero;
     int tamanio;
 
     public ListaSimple() {
         nodoPrimero = null;
         tamanio = 0;
+    }
+
+    public Node<T> getNodoPrimero() {
+        return nodoPrimero;
+    }
+
+    public void setNodoPrimero(Node<T> nodoPrimero) {
+        this.nodoPrimero = nodoPrimero;
+    }
+
+    public int getTamanio() {
+        return tamanio;
+    }
+
+    public void setTamanio(int tamanio) {
+        this.tamanio = tamanio;
     }
 
     public <T> void agregarInicio(T valor) {
@@ -19,6 +33,10 @@ public class ListaSimple {
         nodoPrimero = newNode;
         size++;
 
+    }
+
+    public <T> boolean isEmpty() {
+        return nodoPrimero = null;
     }
 
     public <T> void agregarFinal(T valor) {
