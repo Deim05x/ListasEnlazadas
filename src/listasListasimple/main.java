@@ -29,6 +29,17 @@ public class main {
         System.out.println(lista.obtenerValorNodo(3)); // 40
         System.out.println(lista.obtenerValorNodo(4)); // null
 
+        //Obtener la referencia del nodo por indice
+        Node<Integer> nodo = lista.obtenerNodo(1);
+        if (nodo != null) {
+            System.out.println("Dato del nodo: " + nodo.getDato()); // imprime 10 (indice 1)
+        } else {
+            System.out.println("Índice no válido");
+        }
+
+        //Obtener posicion del nodo
+        System.out.println(lista.obtenerPosicionNodo(30)); // -1
+        System.out.println(lista.obtenerPosicionNodo(20)); // 0
     }
 
 }

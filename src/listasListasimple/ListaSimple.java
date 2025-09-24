@@ -37,12 +37,10 @@ public class ListaSimple<T> {
     }
 
     public void agregarInicio(T valor) {
-
         Node<T> newNode = new Node<T>(valor);
         newNode.setNext(nodoPrimero);
         nodoPrimero = newNode;
         tamanio++;
-
     }
 
     public boolean isEmpty() {
@@ -51,6 +49,7 @@ public class ListaSimple<T> {
 
     public void agregarFinal(T valor) {
         Node<T> newNode = new Node<T>(valor);
+
         if (isEmpty()) {
             nodoPrimero = newNode;
         } else {
@@ -105,4 +104,37 @@ public class ListaSimple<T> {
 
         return null;
     }
+
+    public Node<T> obtenerNodo(int indice) {
+        int contador = 0;
+        Node<T> nodoAux = nodoPrimero;
+
+        while (nodoAux != null) {
+            if (contador == indice) {
+                return nodoAux;
+            }
+            nodoAux = nodoAux.getNext();
+            contador++;
+        }
+
+        return null;
+    }
+
+    public int obtenerPosicionNodo(T valor) {
+        int contador = 0;
+        Node<T> nodoAux = nodoPrimero;
+
+        while (nodoAux != null) {
+            if (nodoAux.getDato().equals(valor)) {
+                return contador;
+            }
+            nodoAux = nodoAux.getNext();
+            contador++;
+        }
+
+        // si no se encontró el valor
+        return -1;
+    }
+
+
 }
