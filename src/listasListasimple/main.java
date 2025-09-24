@@ -46,6 +46,43 @@ public class main {
         System.out.println(lista.indiceValido(2)); // true
         System.out.println(lista.indiceValido(4)); // false (fuera de rango)
         System.out.println(lista.indiceValido(-1)); // false (negativo)
-    }
 
+        //Eliminar primero
+        lista.eliminarPrimero();
+        lista.imprimirLista(); // 10-50-40
+
+        //Eliminar ultimo
+        lista.eliminarUltimo();
+        lista.imprimirLista(); // 10-50
+
+        //Eliminar por valor
+        lista.eliminar(10);
+        lista.imprimirLista(); // 50
+
+        //Agregamos mas valores
+        lista.agregarInicio(60);
+
+        lista.agregarFinal(34);
+
+        lista.agregarPorPosicion(2, 77);
+        lista.imprimirLista();
+
+        //Modificar un nodo
+        lista.modificarNodo(2, 99);
+        lista.imprimirLista(); // 77 -> 99
+
+        //Ordenar la lista
+        lista.ordenarLista();
+        lista.imprimirLista(); // 34-50-60-99
+
+        //Recorrer con iterator
+        for (Integer valor : lista) {
+            System.out.print(valor + " ");
+        }
+        System.out.println();
+
+        //Borrar toda la lista
+        lista.borrarLista();
+        lista.imprimirLista(); // Lista vacia
+    }
 }
