@@ -2,8 +2,8 @@ package listasListasimple;
 
 public class ListaSimple<T> {
 
-    Node<T> nodoPrimero;
-    int tamanio;
+    private Node<T> nodoPrimero;
+    private int tamanio;
 
     public ListaSimple() {
         nodoPrimero = null;
@@ -26,22 +26,22 @@ public class ListaSimple<T> {
         this.tamanio = tamanio;
     }
 
-    public <T> void agregarInicio(T valor) {
+    public void agregarInicio(T valor) {
 
         Node<T> newNode = new Node<T>(valor);
         newNode.setNext(nodoPrimero);
         nodoPrimero = newNode;
-        size++;
+        tamanio++;
 
     }
 
-    public <T> boolean isEmpty() {
-        return nodoPrimero = null;
+    public boolean isEmpty() {
+        return nodoPrimero == null;
     }
 
-    public <T> void agregarFinal(T valor) {
+    public void agregarFinal(T valor) {
         Node<T> newNode = new Node<T>(valor);
-        if (isEmpty) {
+        if (isEmpty()) {
             nodoPrimero = newNode;
         } else {
             Node<T> nodoAux = nodoPrimero;
@@ -52,10 +52,10 @@ public class ListaSimple<T> {
             nodoAux.next = newNode;
 
         }
-        size++;
+        tamanio++;
     }
 
-    public <T> void agregarPorPosicion(int indice, T valor) {
+    public void agregarPorPosicion(int indice, T valor) {
         int contador = 0;
         Node<T> newNode = new Node<T>(valor);
         Node<T> nodoAux = nodoPrimero;
