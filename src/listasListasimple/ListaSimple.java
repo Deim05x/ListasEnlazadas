@@ -26,6 +26,16 @@ public class ListaSimple<T> {
         this.tamanio = tamanio;
     }
 
+    public void imprimirLista() {
+        Node<T> nodo = nodoPrimero;
+        System.out.print("Lista: ");
+        while (nodo != null) {
+            System.out.print(nodo.getDato() + " ");
+            nodo = nodo.getNext();
+        }
+        System.out.println();
+    }
+
     public void agregarInicio(T valor) {
 
         Node<T> newNode = new Node<T>(valor);
