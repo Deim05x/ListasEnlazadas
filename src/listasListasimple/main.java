@@ -14,7 +14,7 @@ public class main {
         System.out.println("Tamaño después de agregar al inicio: " + lista.getTamanio());
         lista.imprimirLista();
 
-        lista.agregarPorPosicion(4, 50);
+        lista.agregarPorPosicion(0, 50);
         System.out.println("Tamaño después de agregar al inicio: " + lista.getTamanio());
         lista.imprimirLista();
     }

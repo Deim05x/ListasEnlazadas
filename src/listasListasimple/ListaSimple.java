@@ -69,15 +69,23 @@ public class ListaSimple<T> {
         int contador = 0;
         Node<T> newNode = new Node<T>(valor);
         Node<T> nodoAux = nodoPrimero;
-        while (nodoAux.next != null) {
-            if (indice == contador) {
-                newNode.setNext(nodoAux.next);
+
+        if (indice == 0) {
+            newNode.setNext(nodoPrimero);
+            nodoPrimero = newNode;
+            return;
+        }
+
+        while (nodoAux != null) {
+            if (contador == indice - 1) {
+                newNode.setNext(nodoAux.getNext());
                 nodoAux.setNext(newNode);
                 break;
             }
             contador++;
+            nodoAux = nodoAux.getNext();
         }
-
     }
+
 
 }
