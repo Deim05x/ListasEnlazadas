@@ -249,4 +249,21 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
         };
     }
 
+    public void invertirContenido() {
+        if (nodoPrimero == null || nodoPrimero.getNext() == null) {
+            return;
+        }
+        nodoPrimero = invertirRecursivo(nodoPrimero, null);
+    }
+
+    private Node<T> invertirRecursivo(Node<T> actual, Node<T> anterior) {
+        if (actual == null) {
+            return anterior;
+        }
+        Node<T> siguiente = actual.getNext();
+        actual.setNext(anterior);
+        return invertirRecursivo(siguiente, actual);
+    }
+
+
 }

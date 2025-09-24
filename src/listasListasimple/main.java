@@ -84,5 +84,17 @@ public class main {
         //Borrar toda la lista
         lista.borrarLista();
         lista.imprimirLista(); // Lista vacia
+
+        //Agregamos mas valores
+        lista.agregarInicio(45);
+
+        lista.agregarFinal(64);
+
+        lista.agregarPorPosicion(2, 37);
+        lista.imprimirLista();
+
+        //Lista invertida
+        lista.invertirContenido();
+        lista.imprimirLista(); // 37-64-45
     }
 }
