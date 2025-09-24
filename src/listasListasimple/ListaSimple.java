@@ -87,5 +87,22 @@ public class ListaSimple<T> {
         }
     }
 
+    public T obtenerValorNodo(int indice) {
+        if (indice < 0) {
+            System.out.println("El índice no puede ser negativo.");
+        }
 
+        int contador = 0;
+        Node<T> nodoAux = nodoPrimero;
+
+        while (nodoAux != null) {
+            if (contador == indice) {
+                return nodoAux.getDato();
+            }
+            nodoAux = nodoAux.getNext();
+            contador++;
+        }
+
+        return null;
+    }
 }
