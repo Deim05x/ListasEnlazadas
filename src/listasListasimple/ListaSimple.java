@@ -1,6 +1,8 @@
 package listasListasimple;
 
-public class ListaSimple<T> {
+import java.util.Iterator;
+
+public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
 
     private Node<T> nodoPrimero;
     private int tamanio;
@@ -155,6 +157,96 @@ public class ListaSimple<T> {
         return false;
     }
 
+    public void eliminarPrimero() {
+        if (nodoPrimero != null) {
+            nodoPrimero = nodoPrimero.getNext();
+        }
+    }
 
+    public void eliminarUltimo() {
+        if (nodoPrimero == null) return;
+        if (nodoPrimero.getNext() == null) {
+            nodoPrimero = null;
+            return;
+        }
+        Node<T> aux = nodoPrimero;
+        while (aux.getNext().getNext() != null) {
+            aux = aux.getNext();
+        }
+        aux.setNext(null);
+    }
+
+    public void eliminar(T valor) {
+        if (nodoPrimero == null) return;
+
+        if (nodoPrimero.getDato().equals(valor)) {
+            nodoPrimero = nodoPrimero.getNext();
+            return;
+        }
+
+        Node<T> aux = nodoPrimero;
+        while (aux.getNext() != null && !aux.getNext().getDato().equals(valor)) {
+            aux = aux.getNext();
+        }
+
+        if (aux.getNext() != null) {
+            aux.setNext(aux.getNext().getNext());
+        }
+    }
+
+    public void modificarNodo(int indice, T nuevoValor) {
+        Node<T> aux = nodoPrimero;
+        int contador = 0;
+        while (aux != null) {
+            if (contador == indice) {
+                aux.setDato(nuevoValor);
+                return;
+            }
+            aux = aux.getNext();
+            contador++;
+        }
+    }
+
+    public void ordenarLista() {
+        if (nodoPrimero == null) return;
+
+        boolean cambiado;
+        do {
+            cambiado = false;
+            Node<T> actual = nodoPrimero;
+            while (actual.getNext() != null) {
+                if (actual.getDato().compareTo(actual.getNext().getDato()) > 0) {
+                    T temp = actual.getDato();
+                    actual.setDato(actual.getNext().getDato());
+                    actual.getNext().setDato(temp);
+                    cambiado = true;
+                }
+                actual = actual.getNext();
+            }
+        } while (cambiado);
+    }
+
+    public void borrarLista() {
+        nodoPrimero = null;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            Node<T> actual = nodoPrimero;
+
+            @Override
+            public boolean hasNext() {
+                return actual != null;
+            }
+
+            @Override
+            public T next() {
+                T dato = actual.getDato();
+                actual = actual.getNext();
+                return dato;
+            }
+        };
+    }
 
 }
