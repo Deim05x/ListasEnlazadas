@@ -1,4 +1,4 @@
-package listas.Listasimple;
+package listasListasimple;
 
 public class ListaSimple {
     

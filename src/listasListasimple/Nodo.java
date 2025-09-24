@@ -1,4 +1,4 @@
-package listas.ListaDoble;
+package listasListasimple;
 
 public class Nodo {
     

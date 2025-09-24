@@ -1,4 +1,4 @@
-package listas.ListaDoble;
+package listasListaDoble;
 
 public class ListaDoble {
     
