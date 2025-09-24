@@ -40,6 +40,12 @@ public class main {
         //Obtener posicion del nodo
         System.out.println(lista.obtenerPosicionNodo(30)); // -1
         System.out.println(lista.obtenerPosicionNodo(20)); // 0
+
+        //Verificar que el indice sea valido
+        System.out.println(lista.indiceValido(0)); // true
+        System.out.println(lista.indiceValido(2)); // true
+        System.out.println(lista.indiceValido(4)); // false (fuera de rango)
+        System.out.println(lista.indiceValido(-1)); // false (negativo)
     }
 
 }

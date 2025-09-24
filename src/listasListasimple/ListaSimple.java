@@ -136,5 +136,25 @@ public class ListaSimple<T> {
         return -1;
     }
 
+    public boolean indiceValido(int indice) {
+        if (indice < 0) {
+            return false;
+        }
+
+        int contador = 0;
+        Node<T> nodoAux = nodoPrimero;
+
+        while (nodoAux != null) {
+            if (contador == indice) {
+                return true;
+            }
+            nodoAux = nodoAux.getNext();
+            contador++;
+        }
+
+        return false;
+    }
+
+
 
 }
